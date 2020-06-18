@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="backdrop"></div>
+    <div class="login-wrapper">
+        <form class="login-html">
+            <div class="login-heading">
+                <h1 class="tab">Login</h1>
+            </div>
+            <div class="login-form">
+                <div class="sign-in-html">
+                    <div class="group">
+                        <label for="user" class="label">Email</label>
+                        <input type="text" id="user" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <div class="pass-container">
+                            <input type="password" id="pass" class="input"
+                                data-type="password">
+                            <span class="show-pass" id="show-pass" onclick="toggle()">
+                                <i class="far fa-eye" onclick="myFunction(this)"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <input type="checkbox" id="check" class="check" checked>
+                        <label for="check">
+                            <span class="icon"></span>Keep me Signed in
+                        </label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign In">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-link">
+                        <a href="#forgot">Forgot Password?</a>
+                    </div>
+                    <div class="sign-up">
+                        <h4>Dont have an Account? <a href="#sign-up">SIGN UP</a></h4>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        var state = false;
+        function toggle(){
+            if(state){
+                document.getElementById("pass").setAttribute("type","password");
+                state=false;
+            }
+            else{
+                document.getElementById("pass").setAttribute("type","text");
+                state=true;
+            }
+        }
+        function myFunction(show){
+            show.classList.toggle("fa-eye-slash");
+        }
+    </script>
+</body>
+</html>
